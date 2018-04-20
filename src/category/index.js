@@ -4,6 +4,7 @@ import actions from './actions'
 import mutations from './mutations'
 
 export default (url, key, timeout = 3000) => ({
+  namespaced: true,
   state,
   getters,
   mutations,

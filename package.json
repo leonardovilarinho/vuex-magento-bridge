@@ -1,6 +1,6 @@
 {
   "name": "magento-store",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Magento module for Vuex",
   "main": "lib/index.js",
   "author": "Leonardo Vilarinho <leonardo-i@outlook.com>",
