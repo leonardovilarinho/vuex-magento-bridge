@@ -5,6 +5,6 @@ export default (url, key, timeout) => {
   const http = makeHttp(url, timeout)
 
   return {
-    searchAll: searchAll(http, 'categories', key)
+    searchAll: searchAll(http, 'products', key)
   }
 }

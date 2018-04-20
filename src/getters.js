@@ -1,3 +1,4 @@
 export default {
-  category: ['getAll']
+  category: ['getAll'],
+  product: ['getAll']
 }
