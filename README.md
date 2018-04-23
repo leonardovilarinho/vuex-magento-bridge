@@ -7,15 +7,9 @@ Enpoints of Magento bridge for Vuex
 ```javascript
 import { category } from 'magento-store'
 
-const { state, getters, actions, mutations } = category(URL, KEY, TIMEOUT)
+const Category = category(URL, KEY, TIMEOUT)
 
-export default {
-  namespaced: true,
-  state,
-  getters,
-  actions,
-  mutations
-}
+export default Category
 
 // ...
 // in component
