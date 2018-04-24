@@ -1,5 +1,4 @@
 'use strict'
-import 'babel-polyfill'
 import { createNamespacedHelpers } from 'vuex'
 import mod from './utils/mod'
 import _category from './category'

@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.mixin = exports.category = exports.product = undefined;
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _extends2 = require('babel-runtime/helpers/extends');
 
-require('babel-polyfill');
+var _extends3 = _interopRequireDefault(_extends2);
 
 var _vuex = require('vuex');
 
@@ -36,7 +36,7 @@ var mixin = exports.mixin = function mixin(moduleName) {
   var name = moduleName.toLowerCase();
 
   return {
-    computed: _extends({}, mapGetters(_mod2.default.getters(name))),
-    methods: _extends({}, mapActions(_mod2.default.actions(name)))
+    computed: (0, _extends3.default)({}, mapGetters(_mod2.default.getters(name))),
+    methods: (0, _extends3.default)({}, mapActions(_mod2.default.actions(name)))
   };
 };

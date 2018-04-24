@@ -1,7 +1,4 @@
 {
-	"presets": ["es2015"],
-	"plugins": [
-		"transform-async-to-generator",
-		"transform-object-rest-spread"
-	]
+	"presets": ["es2015", "stage-3"],
+	"plugins": ["transform-runtime"]
 }
