@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.productmodule = undefined;
 
 var _state = require('./state');
 
@@ -22,7 +23,14 @@ var _mutations2 = _interopRequireDefault(_mutations);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = function (url, key) {
+/**
+ * Generate new vuex module for bridge
+ * @param {string} url link from magento bridge
+ * @param {string} key bridge magento api key
+ * @param {number} timeout await milis
+ * @return module with state, getters, actions and mutations
+ */
+var productmodule = exports.productmodule = function productmodule(url, key) {
   var timeout = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 3000;
   return {
     namespaced: true,

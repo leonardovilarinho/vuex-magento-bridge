@@ -5,7 +5,7 @@ Enpoints of Magento bridge for Vuex
 ## Usage
 
 ```javascript
-import { category } from 'magento-store'
+import { category } from '@onestic/magento-store'
 
 const Category = category(URL, KEY, TIMEOUT)
 
@@ -13,7 +13,7 @@ export default Category
 
 // ...
 // in component
-import { mixin } from 'magento-store'
+import { mixin } from '@onestic/magento-store'
 
 export default {
   mixins: [
@@ -30,7 +30,7 @@ export default {
 
 ## Globals actions
 
-- **searchAll**: `function (mutation = 'SET_ALL', page = 0, pageSize = 0, shuffle = false)`
+- **searchAll**: `function ({mutation = 'SET_ALL', page = 0, pageSize = 0, shuffle = false})`
 
 ## Globals mutations
 

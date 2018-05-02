@@ -19,12 +19,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var searchAll = exports.searchAll = function searchAll(http, object, key) {
   return function () {
-    var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(_ref2) {
+    var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(_ref2, _ref3) {
       var commit = _ref2.commit;
-      var mutation = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'SET_ALL';
-      var page = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-      var size = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0;
-      var shuf = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+      var _ref3$page = _ref3.page,
+          page = _ref3$page === undefined ? 0 : _ref3$page,
+          _ref3$size = _ref3.size,
+          size = _ref3$size === undefined ? 0 : _ref3$size,
+          _ref3$mutation = _ref3.mutation,
+          mutation = _ref3$mutation === undefined ? 'SET_ALL' : _ref3$mutation,
+          _ref3$shuf = _ref3.shuf,
+          shuf = _ref3$shuf === undefined ? false : _ref3$shuf;
       var query, list;
       return _regenerator2.default.wrap(function _callee$(_context) {
         while (1) {
@@ -61,7 +65,7 @@ var searchAll = exports.searchAll = function searchAll(http, object, key) {
       }, _callee, undefined);
     }));
 
-    return function (_x) {
+    return function (_x, _x2) {
       return _ref.apply(this, arguments);
     };
   }();

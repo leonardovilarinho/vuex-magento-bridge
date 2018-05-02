@@ -1,7 +1,7 @@
 import { shuffle } from './index'
 
 export const searchAll = (http, object, key) =>
-  async ({ commit }, mutation = 'SET_ALL', page = 0, size = 0, shuf = false) => {
+  async ({ commit }, {page = 0, size = 0, mutation = 'SET_ALL', shuf = false}) => {
     let query = `?apikey=${key}`
     if (page !== 0 && size !== 0) {
       query += `&page=${page}&pageSize=${size}`

@@ -15,19 +15,20 @@ var _mod = require('./utils/mod');
 
 var _mod2 = _interopRequireDefault(_mod);
 
-var _category2 = require('./category');
+var _category = require('./category');
 
-var _category3 = _interopRequireDefault(_category2);
-
-var _product2 = require('./product');
-
-var _product3 = _interopRequireDefault(_product2);
+var _product = require('./product');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var product = exports.product = _product3.default;
-var category = exports.category = _category3.default;
+var product = exports.product = _product.productmodule;
+var category = exports.category = _category.categorymodule;
 
+/**
+ * create new mixin vuex module based
+ * @function
+ * @param {string} moduleName vuex module name
+ */
 var mixin = exports.mixin = function mixin(moduleName) {
   var _createNamespacedHelp = (0, _vuex.createNamespacedHelpers)(moduleName),
       mapActions = _createNamespacedHelp.mapActions,
