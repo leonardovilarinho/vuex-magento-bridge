@@ -2,19 +2,19 @@ import { shuffle } from './index'
 
 export const searchAll = (http, object, key) =>
   // {page = 0, size = 0, mutation = 'SET_ALL', shuf = false}
-  async ({ commit }, obj) => {
+  async ({ commit }, {page = 0, size = 0, mutation = 'SET_ALL', shuf = false}) => {
     let query = `?apikey=${key}`
+    page = page == undefined ? 0 : page
+    size = size == undefined ? 0 : size
+    mutation = mutation == undefined ? 'SET_ALL' : mutation
+    shuf = shuf == undefined ? false : shuf
     
-    if ('page' in obj && 'size' in obj) {
-      query += `&page=${obj.page}&pageSize=${obj.size}`
-    }
-
-    if (!('mutation' in obj)) {
-    	obj.mutation = 'SET_ALL'
+    if (page !== 0 && size !== 0) {
+      query += `&page=${page}&pageSize=${size}`
     }
 
     const list = (await http.get(`/${object}/index${query}`)).data.result
-    if ('shuf' in obj) return commit(obj.mutation, shuffle(list))
+    if ('shuf' in obj) return commit(mutation, shuffle(list))
 
-    commit(obj.mutation, list)
+    commit(mutation, list)
   }
