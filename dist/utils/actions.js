@@ -21,16 +21,15 @@ var searchAll = exports.searchAll = function searchAll(http, object, key) {
   return (
     // {page = 0, size = 0, mutation = 'SET_ALL', shuf = false}
     function () {
-      var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(_ref2, _ref3) {
+      var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(_ref2) {
         var commit = _ref2.commit;
-        var _ref3$page = _ref3.page,
-            page = _ref3$page === undefined ? 0 : _ref3$page,
-            _ref3$size = _ref3.size,
-            size = _ref3$size === undefined ? 0 : _ref3$size,
-            _ref3$mutation = _ref3.mutation,
-            mutation = _ref3$mutation === undefined ? 'SET_ALL' : _ref3$mutation,
-            _ref3$shuf = _ref3.shuf,
-            shuf = _ref3$shuf === undefined ? false : _ref3$shuf;
+
+        var _ref3 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : { page: 0, size: 0, mutation: 'SET_ALL', shuf: false },
+            page = _ref3.page,
+            size = _ref3.size,
+            mutation = _ref3.mutation,
+            shuf = _ref3.shuf;
+
         var query, list;
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
@@ -38,33 +37,29 @@ var searchAll = exports.searchAll = function searchAll(http, object, key) {
               case 0:
                 query = '?apikey=' + key;
 
-                page = page == undefined ? 0 : page;
-                size = size == undefined ? 0 : size;
-                mutation = mutation == undefined ? 'SET_ALL' : mutation;
-                shuf = shuf == undefined ? false : shuf;
 
                 if (page !== 0 && size !== 0) {
                   query += '&page=' + page + '&pageSize=' + size;
                 }
 
-                _context.next = 8;
+                _context.next = 4;
                 return http.get('/' + object + '/index' + query);
 
-              case 8:
+              case 4:
                 list = _context.sent.data.result;
 
-                if (!('shuf' in obj)) {
-                  _context.next = 11;
+                if (!shuf) {
+                  _context.next = 7;
                   break;
                 }
 
                 return _context.abrupt('return', commit(mutation, (0, _index.shuffle)(list)));
 
-              case 11:
+              case 7:
 
                 commit(mutation, list);
 
-              case 12:
+              case 8:
               case 'end':
                 return _context.stop();
             }
@@ -72,7 +67,7 @@ var searchAll = exports.searchAll = function searchAll(http, object, key) {
         }, _callee, undefined);
       }));
 
-      return function (_x, _x2) {
+      return function (_x) {
         return _ref.apply(this, arguments);
       };
     }()
