@@ -23,43 +23,44 @@ var searchAll = exports.searchAll = function searchAll(http, object, key) {
     function () {
       var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(_ref2) {
         var commit = _ref2.commit;
-
-        var _ref3 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : { page: 0, size: 0, mutation: 'SET_ALL', shuf: false },
-            page = _ref3.page,
-            size = _ref3.size,
-            mutation = _ref3.mutation,
-            shuf = _ref3.shuf;
-
-        var query, list;
+        var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        var query, mutation, page, size, shuf, list;
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 query = '?apikey=' + key;
 
+                params.mutation = 'mutation' in params ? params.mutation : 'SET_ALL';
+                params.page = 'page' in params ? params.page : 0;
+                params.size = 'size' in params ? params.size : 0;
+                params.shuf = 'shuf' in params ? params.shuf : false;
+
+                mutation = params.mutation, page = params.page, size = params.size, shuf = params.shuf;
+
 
                 if (page !== 0 && size !== 0) {
                   query += '&page=' + page + '&pageSize=' + size;
                 }
 
-                _context.next = 4;
+                _context.next = 9;
                 return http.get('/' + object + '/index' + query);
 
-              case 4:
+              case 9:
                 list = _context.sent.data.result;
 
-                if (!shuf) {
-                  _context.next = 7;
+                if (!('shuf' in obj)) {
+                  _context.next = 12;
                   break;
                 }
 
                 return _context.abrupt('return', commit(mutation, (0, _index.shuffle)(list)));
 
-              case 7:
+              case 12:
 
                 commit(mutation, list);
 
-              case 8:
+              case 13:
               case 'end':
                 return _context.stop();
             }
