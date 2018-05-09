@@ -1,11 +1,10 @@
 {
-  "name": "magento-store",
-  "version": "1.0.16",
+  "name": "@onestic/magento-store",
+  "version": "1.0.17",
   "description": "Magento module for Vuex",
   "main": "dist/index.js",
   "author": "Leonardo Vilarinho <leonardo-i@outlook.com>",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "lint": "eslint src",
     "build": "babel src  --out-dir dist"
