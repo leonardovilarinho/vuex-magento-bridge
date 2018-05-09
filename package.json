@@ -1,5 +1,5 @@
 {
-  "name": "@onestic/magento-store",
+  "name": "vuex-magento-bridge",
   "version": "1.0.17",
   "description": "Magento module for Vuex",
   "main": "dist/index.js",
@@ -9,6 +9,10 @@
     "lint": "eslint src",
     "build": "babel src  --out-dir dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardovilarinho/vuex-magento-bridge.git"
+  }, 
   "devDependencies": {
     "babel-cli": "6",
     "babel-plugin-transform-runtime": "^6.23.0",

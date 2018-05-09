@@ -5,7 +5,7 @@ Enpoints of Magento bridge for Vuex
 ## Usage
 
 ```javascript
-import { category } from '@onestic/magento-store'
+import { category } from 'vuex-magento-bridge'
 
 const Category = category(URL, KEY, TIMEOUT)
 
@@ -13,7 +13,7 @@ export default Category
 
 // ...
 // in component
-import { mixin } from '@onestic/magento-store'
+import { mixin } from 'vuex-magento-bridge'
 
 export default {
   mixins: [
