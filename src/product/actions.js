@@ -8,7 +8,9 @@ export default (url, key, timeout) => {
     searchAll: searchAll(http, 'products', key),
     searchOne: searchOne(http, 'product', key),
     setOne: ({ commit }, params) => {
-      params.mutation = 'mutation' in params ? params.mutation : 'SET_ACTUAL'
+      if (!params.hasOwnProperty('mutation')) {
+      	params.mutation = 'SET_ACTUAL'
+      }
       commit(mutation, params.value)
     }
   }

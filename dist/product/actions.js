@@ -17,7 +17,9 @@ exports.default = function (url, key, timeout) {
     setOne: function setOne(_ref, params) {
       var commit = _ref.commit;
 
-      params.mutation = 'mutation' in params ? params.mutation : 'SET_ACTUAL';
+      if (!params.hasOwnProperty('mutation')) {
+        params.mutation = 'SET_ACTUAL';
+      }
       commit(mutation, params.value);
     }
   };
