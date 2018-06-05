@@ -1,5 +1,6 @@
-import { all } from '../utils/state'
+import { all, actual } from '../utils/state'
 
 export default {
-  all
+  all,
+  actual
 }

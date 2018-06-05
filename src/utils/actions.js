@@ -20,3 +20,22 @@ export const searchAll = (http, object, key) =>
 
     commit(mutation, list)
   }
+
+export const searchOne = (http, object, key) =>
+  async ({
+    commit
+  }, params = {}) => {
+    let query = `?apikey=${key}&url=${params.url}`
+
+    params.mutation = 'mutation' in params ? params.mutation : 'SET_ACTUAL'
+
+    const {
+      mutation,
+      url
+    } = params
+
+    const list = (await http.get(`/${object}/index${query}`)).data.result
+    if (shuf) return commit(mutation, shuffle(list))
+
+    commit(mutation, list)
+  }

@@ -1,4 +1,4 @@
 export default {
   category: ['searchAll'],
-  product: ['searchAll']
+  product: ['searchAll', 'searchOne']
 }

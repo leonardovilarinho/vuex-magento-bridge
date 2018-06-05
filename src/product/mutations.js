@@ -1,5 +1,6 @@
-import { SET_ALL } from '../utils/mutations'
+import { SET_ALL, SET_ACTUAL } from '../utils/mutations'
 
 export default {
-  SET_ALL
+  SET_ALL,
+  SET_ACTUAL
 }

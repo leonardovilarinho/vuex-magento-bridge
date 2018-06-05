@@ -1,4 +1,4 @@
 export default {
   category: ['getAll'],
-  product: ['getAll']
+  product: ['getAll', 'getActual']
 }
