@@ -11,7 +11,7 @@ export default (url, key, timeout) => {
       if (!params.hasOwnProperty('mutation')) {
       	params.mutation = 'SET_ACTUAL'
       }
-      commit(mutation, params.value)
+      commit(params.mutation, params.value)
     }
   }
 }
