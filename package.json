@@ -1,6 +1,6 @@
 {
   "name": "vuex-magento-bridge",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "Magento module for Vuex",
   "main": "dist/index.js",
   "author": "Leonardo Vilarinho <leonardo-i@outlook.com>",

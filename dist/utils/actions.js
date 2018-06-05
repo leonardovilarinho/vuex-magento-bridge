@@ -93,11 +93,21 @@ var searchOne = exports.searchOne = function searchOne(http, object, key) {
               return http.get('/' + object + '/index' + query);
 
             case 5:
-              list = _context2.sent.data.result;
+              _context2.t0 = _context2.sent.data.result[0];
+
+              if (_context2.t0) {
+                _context2.next = 8;
+                break;
+              }
+
+              _context2.t0 = {};
+
+            case 8:
+              list = _context2.t0;
 
               commit(mutation, list);
 
-            case 7:
+            case 10:
             case 'end':
               return _context2.stop();
           }
