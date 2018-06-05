@@ -34,6 +34,6 @@ export const searchOne = (http, object, key) =>
       url
     } = params
 
-    const list = (await http.get(`/${object}/index${query}`)).data.result
+    const list = (await http.get(`/${object}/index${query}`)).data.result[0] || {}
     commit(mutation, list)
   }
