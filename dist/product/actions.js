@@ -13,6 +13,12 @@ exports.default = function (url, key, timeout) {
 
   return {
     searchAll: (0, _actions.searchAll)(http, 'products', key),
-    searchOne: (0, _actions.searchOne)(http, 'product', key)
+    searchOne: (0, _actions.searchOne)(http, 'product', key),
+    setOne: function setOne(_ref, params) {
+      var commit = _ref.commit;
+
+      params.mutation = 'mutation' in params ? params.mutation : 'SET_ACTUAL';
+      commit(mutation, params.value);
+    }
   };
 };
