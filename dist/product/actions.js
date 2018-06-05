@@ -12,6 +12,7 @@ exports.default = function (url, key, timeout) {
   var http = (0, _utils.makeHttp)(url, timeout);
 
   return {
-    searchAll: (0, _actions.searchAll)(http, 'products', key)
+    searchAll: (0, _actions.searchAll)(http, 'products', key),
+    searchOne: (0, _actions.searchOne)(http, 'product', key)
   };
 };

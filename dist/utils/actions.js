@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.searchAll = undefined;
+exports.searchOne = exports.searchAll = undefined;
 
 var _regenerator = require('babel-runtime/regenerator');
 
@@ -69,6 +69,53 @@ var searchAll = exports.searchAll = function searchAll(http, object, key) {
 
     return function (_x) {
       return _ref.apply(this, arguments);
+    };
+  }();
+};
+
+var searchOne = exports.searchOne = function searchOne(http, object, key) {
+  return function () {
+    var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(_ref4) {
+      var commit = _ref4.commit;
+      var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var query, mutation, url, list;
+      return _regenerator2.default.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              query = '?apikey=' + key + '&url=' + params.url;
+
+
+              params.mutation = 'mutation' in params ? params.mutation : 'SET_ACTUAL';
+
+              mutation = params.mutation, url = params.url;
+              _context2.next = 5;
+              return http.get('/' + object + '/index' + query);
+
+            case 5:
+              list = _context2.sent.data.result;
+
+              if (!shuf) {
+                _context2.next = 8;
+                break;
+              }
+
+              return _context2.abrupt('return', commit(mutation, (0, _index.shuffle)(list)));
+
+            case 8:
+
+              commit(mutation, list);
+
+            case 9:
+            case 'end':
+              return _context2.stop();
+          }
+        }
+      }, _callee2, undefined);
+    }));
+
+    return function (_x3) {
+      return _ref3.apply(this, arguments);
     };
   }();
 };

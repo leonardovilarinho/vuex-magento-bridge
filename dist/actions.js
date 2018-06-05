@@ -5,5 +5,5 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
   category: ['searchAll'],
-  product: ['searchAll']
+  product: ['searchAll', 'searchOne']
 };

@@ -7,5 +7,6 @@ Object.defineProperty(exports, "__esModule", {
 var _getters = require('../utils/getters');
 
 exports.default = {
-  getAll: _getters.getAll
+  getAll: _getters.getAll,
+  getActual: _getters.getActual
 };
