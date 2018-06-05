@@ -35,7 +35,5 @@ export const searchOne = (http, object, key) =>
     } = params
 
     const list = (await http.get(`/${object}/index${query}`)).data.result
-    if (shuf) return commit(mutation, shuffle(list))
-
     commit(mutation, list)
   }

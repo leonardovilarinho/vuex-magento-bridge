@@ -95,18 +95,9 @@ var searchOne = exports.searchOne = function searchOne(http, object, key) {
             case 5:
               list = _context2.sent.data.result;
 
-              if (!shuf) {
-                _context2.next = 8;
-                break;
-              }
-
-              return _context2.abrupt('return', commit(mutation, (0, _index.shuffle)(list)));
-
-            case 8:
-
               commit(mutation, list);
 
-            case 9:
+            case 7:
             case 'end':
               return _context2.stop();
           }
